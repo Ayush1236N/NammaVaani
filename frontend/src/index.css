@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+.bg-scene {
+  background: radial-gradient(ellipse at top, #1e1b4b 0%, #0f0c29 45%, #050510 100%);
+}
+
+/* Glassmorphic 3D card */
+.glass-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform-style: preserve-3d;
+}
+
+.input-glass {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  color: white;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.input-glass::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.input-glass:focus {
+  border-color: rgba(139, 92, 246, 0.7);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.mic-button {
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.45);
+}
+
+/* Floating gradient blobs for the 3D-ish ambient background */
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.45;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blob-a {
+  width: 26rem;
+  height: 26rem;
+  top: -6rem;
+  left: -8rem;
+  background: radial-gradient(circle, #6366f1, transparent 70%);
+  animation: float-a 16s ease-in-out infinite;
+}
+
+.blob-b {
+  width: 22rem;
+  height: 22rem;
+  bottom: -8rem;
+  right: -6rem;
+  background: radial-gradient(circle, #d946ef, transparent 70%);
+  animation: float-b 20s ease-in-out infinite;
+}
+
+.blob-c {
+  width: 18rem;
+  height: 18rem;
+  top: 40%;
+  left: 60%;
+  background: radial-gradient(circle, #22d3ee, transparent 70%);
+  animation: float-c 24s ease-in-out infinite;
+}
+
+@keyframes float-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(3rem, 4rem) scale(1.1); }
+}
+
+@keyframes float-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-3rem, -3rem) scale(1.15); }
+}
+
+@keyframes float-c {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-2rem, 3rem) scale(0.9); }
+}
+
+/* scrollbar polish for the complaints list */
+.max-h-96::-webkit-scrollbar {
+  width: 6px;
+}
+.max-h-96::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}

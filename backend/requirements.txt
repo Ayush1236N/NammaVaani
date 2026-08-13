@@ -1,0 +1,10 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+faster-whisper==1.0.3
+pydub==0.25.1
+python-multipart==0.0.9
+pydantic==2.13.4
+python-dotenv==1.0.1
+sqlalchemy==2.0.35
+requests==2.34.2
+google-genai==2.17.0
